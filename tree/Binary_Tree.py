@@ -70,16 +70,16 @@ def build_tree(elements):
 if __name__ == '__main__':
     numbers = [17,4,1,20,9,23,18,34]
     
-    # countries = ["India","Pakistan","Germany","USA","China","India","UK","USA"]
-    # country_tree = build_tree(countries)
-    number_tree = build_tree(numbers)
-    number_tree.delete(20)
+    countries = ["India","Pakistan","Germany","USA","China","India","UK","USA"]
+    country_tree = build_tree(countries)
+    # number_tree = build_tree(numbers)
+    # number_tree.delete(20)
     print("In order traversal gives sorted order of elements:")
-    print(number_tree.in_order_traversal())
+    # print(number_tree.in_order_traversal())
     # print("In order traversal gives sorted order of elements:")
     # print(number_tree.in_order_traversal())
     # print(number_tree.search(20))
-    # print(country_tree.in_order_traversal())
+    print(country_tree.in_order_traversal())
     # print(country_tree.search("Nigeria"))
     # print("Min:",number_tree.find_min())
     # print("Max:",number_tree.find_max())
@@ -91,3 +91,11 @@ if __name__ == '__main__':
     #     root.add_child(number)
     # print("In order traversal gives sorted order of elements:")
     # print(root.in_order_traversal())
+
+def inorder_traversal(node):
+    if node is None:
+        return
+    inorder_traversal(node.left)
+    print(node.data,end =" ")
+    inorder_traversal(node.right)
+    
